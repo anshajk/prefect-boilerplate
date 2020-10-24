@@ -1,5 +1,6 @@
 """
 Starter example 
+The easiest way to build a flow is with Prefect's functional API
 Demonstrates how to build a flow with the functional API
 """
 from prefect import task
