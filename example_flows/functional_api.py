@@ -29,7 +29,10 @@ assert state.is_successful()
 first_task_state = state.result[first_result]
 assert first_task_state.is_successful()
 assert first_task_state.result == 3
-
+ 
 second_task_state = state.result[second_result]
 assert second_task_state.is_successful()
 assert second_task_state.result == 103
+
+# flow.serialize()
+flow.register(project_name="boilerplate")
