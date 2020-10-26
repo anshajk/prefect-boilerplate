@@ -12,9 +12,11 @@ from prefect import Parameter
 def say_hello(person: str) -> None:
     print("Hello, {}!".format(person))
 
+
 @task
 def add(x, y=1):
     return x + y
+
 
 flow = Flow("My imperative flow!")
 

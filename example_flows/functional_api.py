@@ -12,9 +12,11 @@ from prefect import Parameter
 def say_hello(person: str) -> None:
     print("Hello, {}!".format(person))
 
+
 @task
 def add(x, y=1):
     return x + y
+
 
 with Flow("My first flow!") as flow:
     first_result = add(1, y=2)
@@ -29,7 +31,7 @@ assert state.is_successful()
 first_task_state = state.result[first_result]
 assert first_task_state.is_successful()
 assert first_task_state.result == 3
- 
+
 second_task_state = state.result[second_result]
 assert second_task_state.is_successful()
 assert second_task_state.result == 103
